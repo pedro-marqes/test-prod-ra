@@ -9,22 +9,23 @@
   <body>
     <h1>Bot Consumidor Padrão</h1>
 
-    <style type="text/css">
+    
+
+
+
+    <style type='text/css'>
       .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #02793e;
+        background-color: #02793E;
         font-family: "Arial", sans-serif;
       }
       .embeddedServiceHelpButton .helpButton .uiButton:focus {
-        outline: 1px solid #02793e;
+        outline: 1px solid #02793E;
       }
     </style>
-
-    <script
-      type="text/javascript"
-      src="https://service.force.com/embeddedservice/5.0/esw.min.js"
-    ></script>
-    <script type="text/javascript">
-      var initESW = function (gslbBaseURL) {
+    
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+      var initESW = function(gslbBaseURL) {
         embedded_svc.settings.displayHelpButton = true; //Ou falso
         embedded_svc.settings.language = "pt-BR"; //Por exemplo, insira "pt" ou "pt-BR"
 
@@ -54,38 +55,33 @@
 
         embedded_svc.settings.enabledFeatures = ["LiveAgent"];
         embedded_svc.settings.entryFeature = "LiveAgent";
-
+    
         embedded_svc.init(
-          "https://obviobrasil.my.salesforce.com",
-          "https://obviobrasil.my.site.com/reclameaqui",
+          'https://obviobrasil.my.salesforce.com',
+          'https://obviobrasil.my.site.com/espacocliente',
           gslbBaseURL,
-          "00Dj0000001o7HY",
-          "Consumidor",
+          '00Dj0000001o7HY',
+          'Consumidor',
           {
-            baseLiveAgentContentURL:
-              "https://c.la3-c1-ph2.salesforceliveagent.com/content",
-            deploymentId: "5723Z000000L8iU",
-            buttonId: "5733Z000000PBRP",
-            baseLiveAgentURL:
-              "https://d.la3-c1-ph2.salesforceliveagent.com/chat",
-            eswLiveAgentDevName: "Consumidor",
-            isOfflineSupportEnabled: false,
+            baseLiveAgentContentURL: 'https://c.la3-c1-ph2.salesforceliveagent.com/content',
+            deploymentId: '5723Z000000L8iU',
+            buttonId: '5733Z000000PBRP',
+            baseLiveAgentURL: 'https://d.la3-c1-ph2.salesforceliveagent.com/chat',
+            eswLiveAgentDevName: 'Consumidor',
+            isOfflineSupportEnabled: false
           }
         );
       };
-
+    
       if (!window.embedded_svc) {
-        var s = document.createElement("script");
-        s.setAttribute(
-          "src",
-          "https://obviobrasil.my.salesforce.com/embeddedservice/5.0/esw.min.js"
-        );
-        s.onload = function () {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://obviobrasil.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
           initESW(null);
         };
         document.body.appendChild(s);
       } else {
-        initESW("https://service.force.com");
+        initESW('https://service.force.com');
       }
     </script>
   </body>
